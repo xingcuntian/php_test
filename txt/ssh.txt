@@ -1,0 +1,8 @@
+php使用exec执行unzip解压命令 文件名里的中文成了ASCII
+
+在php代码中设置一下编码就好了
+
+$locale = 'zh_CN.UTF-8';
+setlocale(LC_ALL, $locale);
+putenv('LC_ALL='.$locale);
+
