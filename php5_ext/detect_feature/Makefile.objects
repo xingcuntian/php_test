@@ -1,0 +1,8 @@
+detect_feature.lo: /data/www/module/detect_feature/detect_feature.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/data/www/module/detect_feature $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /data/www/module/detect_feature/detect_feature.c -o detect_feature.lo 
+$(phplibdir)/detect_feature.la: ./detect_feature.la
+	$(LIBTOOL) --mode=install cp ./detect_feature.la $(phplibdir)
+
+./detect_feature.la: $(shared_objects_detect_feature) $(DETECT_FEATURE_SHARED_DEPENDENCIES)
+	$(LIBTOOL) --mode=link $(CC) $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(LDFLAGS) -o $@ -export-dynamic -avoid-version -prefer-pic -module -rpath $(phplibdir) $(EXTRA_LDFLAGS) $(shared_objects_detect_feature) $(DETECT_FEATURE_SHARED_LIBADD)
+

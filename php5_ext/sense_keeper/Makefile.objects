@@ -1,0 +1,8 @@
+sense_keeper.lo: /usr/local/src/php-5.5.12/ext/sense_keeper/sense_keeper.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/usr/local/src/php-5.5.12/ext/sense_keeper $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /usr/local/src/php-5.5.12/ext/sense_keeper/sense_keeper.c -o sense_keeper.lo 
+$(phplibdir)/sense_keeper.la: ./sense_keeper.la
+	$(LIBTOOL) --mode=install cp ./sense_keeper.la $(phplibdir)
+
+./sense_keeper.la: $(shared_objects_sense_keeper) $(SENSE_KEEPER_SHARED_DEPENDENCIES)
+	$(LIBTOOL) --mode=link $(CC) $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(LDFLAGS) -o $@ -export-dynamic -avoid-version -prefer-pic -module -rpath $(phplibdir) $(EXTRA_LDFLAGS) $(shared_objects_sense_keeper) $(SENSE_KEEPER_SHARED_LIBADD)
+

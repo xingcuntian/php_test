@@ -1,0 +1,13 @@
+// $Id$
+// vim:ft=javascript
+
+// If your extension references something external, use ARG_WITH
+// ARG_WITH("detect_feature", "for detect_feature support", "no");
+
+// Otherwise, use ARG_ENABLE
+// ARG_ENABLE("detect_feature", "enable detect_feature support", "no");
+
+if (PHP_DETECT_FEATURE != "no") {
+	EXTENSION("detect_feature", "detect_feature.c");
+}
+

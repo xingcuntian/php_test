@@ -1,0 +1,13 @@
+// $Id$
+// vim:ft=javascript
+
+// If your extension references something external, use ARG_WITH
+// ARG_WITH("sense_keeper", "for sense_keeper support", "no");
+
+// Otherwise, use ARG_ENABLE
+// ARG_ENABLE("sense_keeper", "enable sense_keeper support", "no");
+
+if (PHP_SENSE_KEEPER != "no") {
+	EXTENSION("sense_keeper", "sense_keeper.c");
+}
+
